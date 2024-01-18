@@ -1,0 +1,22 @@
+.wrapper{
+    background-color: #000000;
+    margin: 0 auto;
+    width: 500px;
+    position: absolute;
+    top: 30%;
+    height: 300px;
+    right: 20px;
+    left: 20px;
+    z-index: 1;
+    cursor: default;
+    padding: 40px 45px;
+    border-radius: 5px;
+}
+.wrapper {
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .wrapper.closed {
+    opacity: 0;
+  }
+  
