@@ -1,3 +1,5 @@
+
+import FullCars from './components/fullCars/fullCars'
 import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import Login from './pages/Login'
@@ -16,6 +18,7 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path="/login" element={<Login/>}/>
     </Routes>
+ <FullCars/>
   </div>
      
     
