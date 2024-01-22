@@ -34,6 +34,7 @@ body{
 .wrapper{
     color: #ffffff;
     display: flex;
+    margin-top: -60px;
 }
 .bron {
     background: transparent;

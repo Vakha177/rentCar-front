@@ -4,6 +4,7 @@ import ferrari from "../../image/sf90.jpg";
 import ferrariPanel from "../../image/sf902.jpg";
 import Condition from "../condition/Condition";
 import RentAuto from "../rentAuto/rentAuto";
+import RentAutoInfo from "../rentAutoInfo/RentAutoInfo";
 export default function FullCars() {
   const [open, setOpen] = useState(false);
   const [openRent , setOpenRent] = useState(false)
@@ -13,6 +14,9 @@ export default function FullCars() {
   function handleOpenRent  ()  {
 setOpenRent(!openRent)
   }
+  const product = useSelector((state) =>
+  state.product.product.find((item) => item._id === id)
+);
 
   return (
     <>
@@ -40,7 +44,7 @@ setOpenRent(!openRent)
 
         <img src={ferrari} alt="" className={style.fotoSf} />
       </div>
-      <RentAuto />
+      <RentAutoInfo />
     </>
   );
 }

@@ -1,0 +1,64 @@
+.wrapper{
+    background-color: #0A1017 !important;
+    margin: 0 auto;
+    width: 500px;
+    position: absolute;
+    top: 30%;
+    height: 300px;
+    right: 20px;
+    left: 20px;
+    z-index: 1;
+    cursor: default;
+    padding: 40px 45px;
+    border-radius: 5px;
+}
+.bron{
+    font-size: 40px;
+    border-bottom:0.1px solid  #ff0000;
+}
+.inputName {
+    border: 1px solid red!important;
+    width: 80%;
+    margin: 30px auto; 
+    display: block; 
+    padding: 10px; 
+background-color: #0A1017;
+color: gray;
+
+}
+.inputName :hover{
+  
+}
+  .inputNumber{
+    border: 1px solid red!important;
+    width: 80%;
+    margin: 30px auto; 
+    display: block; 
+    padding: 10px; 
+    background-color: #0A1017;
+    color: gray;
+    
+  }
+  .inputTg{
+    border: 1px solid red!important;
+    width: 80%;
+    margin: 30px auto; 
+    display: block; 
+    padding: 10px; 
+    background-color: #0A1017;
+    color: gray;
+
+  }
+  .bronButton {
+    background: transparent;
+    border: 1px solid #ff0000;
+    color: #ffffff; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    width: 60%;
+    margin: auto; /* Центрирование по горизонтали */
+    display: block; /* Убеждаемся, что кнопка является блочным элементом */
+    text-align: center; /* Центрирование текста внутри кнопки */
+    font-size: 20px;
+  }
+  
