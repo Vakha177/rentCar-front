@@ -1,9 +1,10 @@
 .nav{
     display: flex;
     justify-content: space-between;
-    width: 1100px;
+    width: 1050px;
     margin: auto;
-    padding: 8px 0px;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.221);
     position: sticky;
     top: 0;
 }
@@ -44,7 +45,7 @@ nav a{
     padding: 5px;
     margin: 0 8px;
 }
-.nav ul li a:not(.active):hover{
+.nav ul li a:hover{
     border-bottom: 2px solid #e05800;
 }
 .auth{
@@ -59,4 +60,47 @@ align-items: center;
 .logIcon:hover{
     transform: scale(1.2);
     color: #e79d58;
+}
+
+.nav ul li ul{
+    position: absolute;
+    background-color: #152331;
+    left: 0;
+    top: 60px;
+    width:100%;
+    display: none;
+    padding-top: 50px;
+    transition: 2s;
+
+}
+.nav ul li ul li{
+    border-left: 1px solid rgba(159, 159, 159, 0.183);
+    border-right: 1px solid rgba(159, 159, 159, 0.183);
+    padding: 15px 20px;
+    margin-bottom:  10px;    
+}
+.nav ul li ul a{
+    transition: 0.2s;
+}
+.nav ul li ul a:hover{
+    border: none;
+    color:#ff6600;
+    text-shadow: 0px 0px 3px rgb(208, 76, 0);
+}
+.nav ul li:hover > ul{
+    display: flex;
+}
+.nav ul li ul img{
+    width: 70px;
+}
+.chevroletLogo{
+    width: 100px;
+}
+.nav ul li ul p{
+    margin-top: -2px;
+    text-align: center;
+    margin-bottom: -6px;
+}
+.extrasUslugas{
+    text-align: center;
 }
