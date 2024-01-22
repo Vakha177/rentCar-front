@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useSelector} from 'react-redux'
 import style from "../FullCars/fullCars.module.css";
 import ferrari from "../../image/sf90.jpg";
 import ferrariPanel from "../../image/sf902.jpg";
