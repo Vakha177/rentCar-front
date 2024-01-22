@@ -56,7 +56,7 @@ function NavMenu() {
           <NavLink> Блог </NavLink>
         </li>
         <li>
-          <NavLink> Условия аренды </NavLink>
+          <NavLink to='/rentalconditions'> Условия аренды </NavLink>
         </li>
         <li>
           <NavLink to="/about"> О компании </NavLink>
