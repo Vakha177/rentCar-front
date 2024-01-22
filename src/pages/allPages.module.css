@@ -1,0 +1,38 @@
+.rentalConditions{
+    padding-left: 20px;
+}
+.rentalConditions p{
+    color: white;
+    font-size: 20px;
+}
+.rentalConditions h1{
+    margin-top: -1px;
+    color: white;
+    font-size: 100px ;
+}
+.rentalConditions ul{
+    color: white;
+    margin-bottom: 50px;
+}
+.rentalConditions ul li{
+    font-size: 18px;
+}
+.about{
+    color: white;
+    padding-left: 20px;
+}
+.about p{
+    font-size: 18px;
+}
+.about h1{
+    margin-top: -20px;
+    margin-bottom: -1px;
+    font-size: 80px;
+}
+.about ul{
+    color: white;
+    margin-bottom: 20px;
+}
+.about ul li{
+    font-size: 18px;
+}
