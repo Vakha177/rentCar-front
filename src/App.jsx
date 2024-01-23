@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import RentalConditions from './pages/RentalConditions'
 import styles from './App.module.css'
+import Chat from './components/chat/chat'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/login" element={<Login/>}/>
     </Routes>
  <FullCars/>
+ <Chat/>
   </div>
      
     
