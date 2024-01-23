@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../../assets/carkey.png";
 import chevrolet from '../../assets/chevrolet.png'
 import audi from '../../assets/audi.png'
@@ -9,8 +8,13 @@ import mclaren from '../../assets/mclaren.png'
 import { CgProfile } from "react-icons/cg";
 import styles from "./index.module.css";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import Auth from "../Authorizaz/Auth";
 
 function NavMenu() {
+  
+  const [showAuth, setShowAuth] = useState(false) 
+
   return (
     <nav className={styles.nav}>
       <Link to="/">
@@ -66,10 +70,9 @@ function NavMenu() {
         </li>
       </ul>
       <div className={styles.auth}>
-        <Link to="/login">
-          <CgProfile className={styles.logIcon} size={40} />
-        </Link>
+          <CgProfile onClick={ () => setShowAuth(true)} className={styles.logIcon} size={40} />
       </div>
+      { showAuth === true ? <Auth setOpen={setShowAuth}/> : null}
     </nav>
   );
 }
