@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+
+}
+
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh ;
+    height: auto;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    background-size: cover ;
+    background-position: center ;
+    font-family: 'roboto', sans-serif;
+}
+
+.wrapper {
+    position: absolute;
+    background-color: #161414d6;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.form{
+    border-radius: 15px;
+    border: 0.5px;
+    padding-top: 40px;
+    width: 430px;
+    height: 500px;
+    color: black;
+    font-family: system,-apple-system,BlinkMacSystemFont,'Segoe UI','Segoe WP',Roboto,Ubuntu,Oxygen,Cantarell,'Fira Sans','Helvetica Neue',Helvetica,'Lucida Grande','Droid Sans',Tahoma,'Microsoft Sans Serif',sans-serif;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    background-color: #1e2c42;
+    margin-top: 30vh;
+
+}
+
+.heading{
+    color: white;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+input,
+.sumbit-btn{
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px ;
+    background-color: #e05800;
+    border: none;
+    color:  gray;
+    padding: 15px;
+    transition: .5s;
+}
+
+.auth-change-text {
+    text-align: center;
+    color: #e05800;
+}
+
+.auth-change {
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    border-bottom: solid 1px #e05800;
+}
+
+input::placeholder{
+    color: gray;
+}
+
+input:focus,
+.sumbit-btn:hover{
+    background-color: rgba(229, 224, 224, 0.854);
+    color: black;
+}
+
+input:focus::placeholder{
+    color: gray;   
+}
+
+.sumbit-btn{
+    color: black;
+    background-color:#e05800;
+    width: auto;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: 50px auto 0;
+}
+
+ .Link{
+    text-align: center;
+    text-transform: capitalize;
+    color: black;
+    display: block;
+    margin: 30px auto;
+    text-decoration: none;
+
+}
+
+.Link:hover{
+    color: gray;
+}
+
+.alert-box{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 150px;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    text-transform: capitalize;
+    background: rgb(255,119,119);
+    border-top: 10px solid rgb(255,37,37);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff;
+    font-family: 'roboto' sans-serif;
+    text-align: center;
+    transition: 1s;
+}
+
+input{
+    background-color: #f1f1f5;
+    height: 52px;
+}
+.formAuth{
+    display: flex;
+    z-index: 2;
+}
+.toggle{
+    z-index: 3;
+    position: absolute;
+    
+}
+
+.exit{
+    background-color: #e05800;
+    height: 20px;
+    width: 30px;
+    right: 660px;
+    position: absolute;
+    cursor: pointer;
+}
