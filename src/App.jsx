@@ -7,11 +7,13 @@ import About from './pages/About'
 import RentalConditions from './pages/RentalConditions'
 import styles from './App.module.css'
 import Chat from './components/chat/chat'
+import Login from './pages/Login'
 function App() {
 
   return (
   <div> 
     <Header/>
+
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
