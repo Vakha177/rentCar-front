@@ -17,7 +17,7 @@ const ProductCard = ({id, title, image, price, power, engineCapacity, accelerati
                 <p>Максимальная скорость:{engineCapacity}</p>
             </div>
             <div className={styles.price}>
-                <p>День:{price}p</p>
+                <p>День:{price}$</p>
             </div>
             <div>
                 <button>Забронировать</button>

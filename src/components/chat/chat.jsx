@@ -39,28 +39,29 @@ const Chat = () => {
 
   return (
     <div className={style.wrapper}>
-      {isChatOpen && (
-        <div className={style.wrapperText} style={{position: 'absolute', top: '350px',left:'80%' , width: '254px'}}>
-          <div style={{ height: '300px', border: '1px solid #ccc', overflowY: 'scroll' , background:'gray' }}>
-            {messages.map((message, index) => (
-              <div key={index} style={{ padding: '8px', borderBottom: '1px solid #eee' }}>
-                {message.sender}: {message.text}
-              </div>
-            ))}
-          </div>
-          <div style={{ marginTop: '10px' }}>
-            <input className={style.input}
-              type="text"
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-              placeholder='Напишите сообщение'
- />
-            <button className={style.btn} onClick={handleSendMessage}>Отправить</button>
-          </div>
+    {isChatOpen && (
+      <div className={style.wrapperText} style={{position: 'fixed', bottom: '50px', right: '35px', width: '254px'}}>
+        <div style={{ height: '300px', border: '1px solid #ccc', overflowY: 'scroll', background: 'gray' }}>
+          {messages.map((message, index) => (
+            <div key={index} style={{ padding: '8px', borderBottom: '1px solid #eee' }}>
+              {message.sender}: {message.text}
+            </div>
+          ))}
         </div>
-      )}
-          <img src={logoChat} alt="" onClick={handleLogoClick} className={style.logo}/>
-    </div>
+        <div className={style.wrapperAdd} style={{ marginTop: '10px' }}>
+          <input className={style.input}
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            placeholder='Напишите сообщение'
+          />
+          <button className={style.btn} onClick={handleSendMessage}>Отправить</button>
+        </div>
+      </div>
+    )}
+    <img src={logoChat} alt="" onClick={handleLogoClick} className={style.logo}/>
+  </div>
+  
   );
 };
 
