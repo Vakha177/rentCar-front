@@ -21,8 +21,8 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/rentalconditions' element={<RentalConditions/>}/>
       <Route path="/login" element={<Login/>}/>
+       <Route path='/fullpages/:id' element={<FullCars/>}/>
     </Routes>
- <FullCars/>
  <Chat/>
   </div>
      
