@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import {useSelector} from 'react-redux'
+import React, { useEffect, useState } from "react";
+import {useDispatch, useSelector} from 'react-redux'
 import style from "../FullCars/fullCars.module.css";
 import ferrari from "../../image/sf90.jpg";
 import ferrariPanel from "../../image/sf902.jpg";
 import Condition from "../condition/Condition";
 import RentAuto from "../rentAuto/rentAuto";
 import RentAutoInfo from "../rentAutoInfo/RentAutoInfo";
+import { fetchProduct } from "../../features/ProductSlice";
+import { useParams } from "react-router-dom";
 export default function FullCars() {
+  const { id } = useParams();
   const [open, setOpen] = useState(false);
   const [openRent , setOpenRent] = useState(false)
   function handleSetOpen() {
@@ -15,8 +18,14 @@ export default function FullCars() {
   function handleOpenRent  ()  {
 setOpenRent(!openRent)
   }
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProduct());
+  }, [dispatch]);
+
+
   const product = useSelector((state) =>
-  state.product.product.find((item) => item._id === id)
+  state.product.product.find((item) => item._id === '65acf5f6625b1679b25340c0')
 );
 
   return (

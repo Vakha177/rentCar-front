@@ -36,3 +36,10 @@
 .about ul li{
     font-size: 18px;
 }
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}

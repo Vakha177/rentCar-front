@@ -5,9 +5,8 @@ import Header from './Header'
 import Home from './pages/Home'
 import About from './pages/About'
 import RentalConditions from './pages/RentalConditions'
-
-
-
+import styles from './App.module.css'
+import Chat from './components/chat/chat'
 function App() {
 
   return (
@@ -20,6 +19,7 @@ function App() {
       <Route path='/rentalconditions' element={<RentalConditions/>}/>
     </Routes>
  <FullCars/>
+ <Chat/>
   </div>
      
     
