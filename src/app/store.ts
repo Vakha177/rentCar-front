@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productSlice from "../features/ProductSlice";
-import chatSlice from "../features/chatSlice";
+
+import cardSlice from "../features/cardSlice";
+
 export const store = configureStore({
     reducer: {
-        product: productSlice ,
-        chat: chatSlice,
+        product: productSlice,
+        cards: cardSlice
     }
 })
 
