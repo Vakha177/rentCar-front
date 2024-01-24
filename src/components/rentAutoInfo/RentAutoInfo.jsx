@@ -1,27 +1,33 @@
 import React, { useState } from 'react'
 import style from './rent.module.css'
+import { useSelector } from 'react-redux';
 export default function RentAutoInfo() {
   
-
+  const product = useSelector((state) =>
+  state.product.product
+);
   return (
     <div className={style.wrapper}>
     <div className={style.wrapperInfo}>
-       <div className={style.nameRent}>Аренда Ferrari SF90 Spider 2023 в Дубае</div> 
+       <div className={style.nameRent}>Аренда {product.title} в Дубае</div> 
         <div className={style.infoCars}>
-        Ощутите магию скорости и элегантности с Ferrari SF90 Spider — воплощением роскоши и инженерного мастерства. Этот кабриолет с выдающимися характеристиками предоставляет неповторимый опыт вождения, смешивая в себе мощь и эстетику. Сердце SF90 — гибридная силовая установка, обеспечивающая впечатляющую динамику и эффективность. От подчеркнутой линии кузова до утонченного интерьера, каждая деталь этого автомобиля выражает страсть к автомобильному искусству. Арендуйте Ferrari SF90 Spider для неповторимого опыта в вождении и невероятного стиля.
+        Ощутите магию скорости и элегантности с {product.title} — воплощением роскоши и инженерного мастерства. Этот кабриолет с выдающимися характеристиками предоставляет неповторимый опыт вождения, смешивая в себе мощь и эстетику. Сердце {product.title} — гибридная силовая установка, обеспечивающая впечатляющую динамику и эффективность. От подчеркнутой линии кузова до утонченного интерьера, каждая деталь этого автомобиля выражает страсть к автомобильному искусству. Арендуйте {product.title} для неповторимого опыта в вождении и невероятного стиля.
         </div>
     </div>
         <div className={style.kharakter}>
             Характеристики автомобиля:
-            <h3 style={{margin: '5px 0'}}>Кузов: Спорткар, Кабриолет</h3>
-            <h3 style={{margin: '5px 0'}}>Тип двигателя: Бензин V8</h3>
-            <h3 style={{margin: '5px 0'}}>Объём двигателя: 3990 куб. см.</h3>
-            <h3 style={{margin: '5px 0'}}>Мощность: 780 л.с.</h3>
-            <h3 style={{margin:'5px 0 '}}>Максимальная скорость: 340 км/ч</h3>
+            <h3 style={{margin: '5px 0'}}>Кузов:{product.engineType}</h3>
+            <h3 style={{margin: '5px 0'}}>Тип двигателя:{product.engineType}</h3>
+            <h3 style={{margin: '5px 0'}}>Объём двигателя:{product.engineCapacity}</h3>
+            <h3 style={{margin: '5px 0'}}>Мощность:{product.power}</h3>
+            <h3 style={{margin:'5px 0 '}}>Максимальная скорость: {product.maxSpeed}</h3>
+            <h3 style={{margin:'5px 0 '}}>Разгон до 100/км: {product.accelerationTo100Km}</h3>
+
+
         </div>
         <div className={style.kharakter2} >
-        <h3 style={{margin: '5px 0'}}>Привод: Полный (E4WD)</h3>
-            <h3 style={{margin: '5px 0'}}>Мест: 2 места</h3>
+        <h3 style={{margin: '5px 0'}}>Привод: {product.drive}</h3>
+            <h3 style={{margin: '5px 0'}}>Мест:{product.places}</h3>
 
         </div>
     </div>

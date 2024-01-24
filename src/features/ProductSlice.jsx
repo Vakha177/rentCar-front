@@ -6,9 +6,9 @@ const initialState = {
 
 export const fetchProduct = createAsyncThunk(
   "product/fetch",
-  async (_, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:4100/carbooker/:id");
+      const res = await fetch(`http://localhost:4100/carbooker/${id}`);
       const product = await res.json();
       if (product.error) {
         return thunkAPI.rejectWithValue(product.error);
