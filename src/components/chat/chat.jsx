@@ -41,7 +41,7 @@ const Chat = () => {
     <div className={style.wrapper}>
       {isChatOpen && (
         <div className={style.wrapperText} style={{position: 'fixed', top: '330px',left:'80%' , width: '254px'}}>
-          <div style={{ height: '300px', border: '1px solid #ccc', overflowY: 'scroll' , background:'gray' }}>
+          <div style={{ height: '300px', border: '1px solid #ccc', overflowY: 'scroll' , background:'#242020' }}>
             {messages.map((message, index) => (
               <div key={index} style={{ padding: '8px', borderBottom: '1px solid #eee' }}>
                 {message.sender}: {message.text}
