@@ -1,26 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './card.module.css'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProduct } from '../../features/ProductSlice';
 
 const ProductCard = ({id, title, image, price, power, engineCapacity, accelerationTo100Km}) => {
-    console.log(image)
     return (
-        <div className={styles.card}>
+        <div className={styles.card }>
             <div className={styles.image}>
-                <img src={`http://localhost:4100/image/${image[0]}`} alt="" />
+                <Link to={`/fullpages/${id}`} >
+                <img src={`http://localhost:4100/image/${image[0]}`} alt=""  />
+                </Link>
+                
             </div>
             <div>
+                <h2>
                 {title}
+
+                </h2>
             </div>
+          <br />
+
             <div className={styles.info}>
                 <p>Мощность:{power}</p>
                 <p>Разгон до 100 км/ч:{accelerationTo100Km}</p>
                 <p>Максимальная скорость:{engineCapacity}</p>
             </div>
+          <br />
+<hr />
             <div className={styles.price}>
-                <p>День:{price}$</p>
+
+                <h2>{price}$</h2>
             </div>
+            <br />
             <div>
-                <button>Забронировать</button>
+                <button className={styles.btnBron}>Забронировать</button>
             </div>
         </div>
     )

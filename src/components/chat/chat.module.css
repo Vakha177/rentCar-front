@@ -15,8 +15,9 @@
   .input{
     border-radius: 8px;
     border: 0.1px;
-    height: 10px;
+    height: 33px;
     margin-top: 0px;
+
   }
   .btn{
     border-radius: 8px;
@@ -31,3 +32,7 @@
   .wrapperAdd{
     display: flex;
   }
+  .buttonAdd{
+    display: flex;
+  }
+  
