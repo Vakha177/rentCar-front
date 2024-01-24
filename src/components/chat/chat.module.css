@@ -15,15 +15,21 @@
   .input{
     border-radius: 8px;
     border: 0.1px;
+    height: 33px;
+    margin-top: 0px;
 
   }
   .btn{
     border-radius: 8px;
     border: 0.1px;
+    height: 33px;
   }
   .wrapperText{
     background: 152331;
     color: white;
     border-radius: 10px
+  }
+  .buttonAdd{
+    display: flex;
   }
   
