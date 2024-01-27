@@ -10,6 +10,7 @@ function Home() {
   useEffect(()=>{
     dispatch(fetchCards())
   },[dispatch])
+  console.log('sdfsdf', cards);
   return (
     <div className={styles.cards}>
       {cards.map((item)=> {
