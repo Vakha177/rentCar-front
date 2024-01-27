@@ -2,7 +2,7 @@
     background-color: #000000;
     margin: 0 auto;
     width: 500px;
-    position: absolute;
+    position: fixed;
     top: 30%;
     height: 386px;
     right: 20px;

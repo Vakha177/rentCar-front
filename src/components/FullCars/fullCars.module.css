@@ -69,4 +69,27 @@ body{
     margin-top: 70px;
     margin-left: 80px;
   }
-  
+  .next{
+    position: absolute;
+    top: 299px;
+    left: 820px;
+    transform: translateY(-50%);
+    background:#152331;
+    border: none;
+    color:white;
+    font-size: 24px;
+    padding: 10px;
+
+  }
+  .prev{
+      position: absolute;
+      top: 305px;
+      right: 20px;
+      transform: translateY(-50%);
+      background: #152331;
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+
+  }
