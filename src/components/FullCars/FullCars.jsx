@@ -6,6 +6,7 @@ import RentAutoInfo from "../rentAutoInfo/RentAutoInfo";
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../../features/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
+import CommentsCars from "../CommentsCars/CommentsCars";
 
 export default function FullCars() {
   const dispatch = useDispatch();
@@ -71,6 +72,7 @@ export default function FullCars() {
         </div>
       </div>
       <RentAutoInfo />
+      <CommentsCars/>
     </>
   );
 }
