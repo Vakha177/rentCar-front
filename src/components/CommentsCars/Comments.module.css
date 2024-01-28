@@ -1,0 +1,21 @@
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .wrapperComments {
+    margin-top: 20px;
+    position: absolute;
+    left: 19%;
+  }
+  
+  .input{
+    width: 500px;
+    height: 60px;
+  }
+  .otziv{
+    color: white;
+  }
