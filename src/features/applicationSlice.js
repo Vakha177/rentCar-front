@@ -7,7 +7,7 @@ const initialState = {
 }
 
 
-export const login = createAsyncThunk('tradehub/login', async ({login, password, }, thunkAPI) => {
+export const login = createAsyncThunk('tradehub/login', async ({login, password  }, thunkAPI) => {
     try {
         const res = await fetch('http://localhost:4100/login', {
             method: 'POST',
