@@ -3,10 +3,10 @@ import productSlice from "../features/ProductSlice";
 import applicationSlice from "../features/applicationSlice";
 import cardSlice from "../features/cardSlice";
 import chatSlice from "../features/chatSlice";
-
-import commentsSlice from "../features/commentsSlice";
 import brandSlice from "../features/brandSlice";
 import categorySlice from "../features/categorySlice";
+
+import commentsSlice from "../features/commentsSlice";
 
 export const store = configureStore({
     reducer: {
