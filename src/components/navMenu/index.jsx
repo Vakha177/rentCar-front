@@ -1,8 +1,14 @@
 import Logo from "../../assets/carkey.png";
+import chevrolet from '../../assets/chevrolet.png'
+import audi from '../../assets/audi.png'
+import bmw from '../../assets/bmw.png'
+import porsche from '../../assets/porsche-logo.png'
+import mercedes from '../../assets/mercedes.png'
+import mclaren from '../../assets/mclaren.png'
 import { CgProfile } from "react-icons/cg";
 import styles from "./index.module.css";
 import { Link, NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Auth from "../Authorizaz/Auth";
 import { logout } from "../../features/applicationSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,50 +24,37 @@ function NavMenu() {
 
   const token = useSelector((state) => state.application.token)
   const [showFav, setShowFav] = useState(false)
-import { useDispatch, useSelector } from "react-redux";
-import { fetchBrand } from "../../features/brandSlice";
-import { fetchCategory } from "../../features/categorySlice";
-
-function NavMenu() {
-  
-  const dispatch = useDispatch()
-
-  const logo = useSelector((state) => state.brands.brands)
-  const typeCars = useSelector((state) => state.categories.categories)
-
-
-  useEffect(() => {
-    dispatch(fetchBrand())
-    dispatch(fetchCategory())
-  }, [dispatch])
-
-  console.log(typeCars);
-
   const [showAuth, setShowAuth] = useState(false) 
 
   return (
     <nav className={styles.nav}>
       <Link to="/"> 
         <div className={styles.logo}>
-          <img src={Logo} alt="logo" />
+          <img src={Logo} alt="" />
           <p>Car rental</p>
         </div>
       </Link>
       <ul>
         <li>
           <NavLink> Автомобили </NavLink>
-          <ul className={styles.ulForBrand}>
-            {typeCars.map((item, index) => 
-              <Link><li key={index}>{item.name}</li></Link>
-            )}
+          <ul>
+            <li><Link>Седан</Link></li>
+            <li><Link>Универсал</Link></li>
+            <li><Link>Купе</Link></li>
+            <li><Link>Внедорожник</Link></li>
+            <li><Link>Кабриолет</Link></li>
+            <li><Link>Маскл кар</Link></li>
           </ul>
         </li>
         <li>
           <NavLink> Бренды </NavLink>
-          <ul className={styles.ulForBrand}>
-            {logo.map((item, index) => 
-              <li><Link className={styles.brand_link}><img className={styles.brand_card} key={index} src={`http://localhost:4100/image/${item.image}`} alt="logo"/><p>{item.name.toLowerCase()}</p></Link></li>
-            )}                     
+          <ul>
+            <li><Link><img src={chevrolet} alt="Chevrolet" /><p>Chevrolet</p></Link></li>    
+            <li><Link><img src={bmw} alt="bmw" /><p>BMW</p></Link></li>            
+            <li><Link><img src={audi} alt="audi" /><p>Audi</p></Link></li>            
+            <li><Link><img src={porsche} alt="porsche" /><p>Porsche</p></Link></li>    
+            <li><Link><img src={mercedes} alt="mercedes" /><p>Mercedes</p></Link></li>  
+            <li><Link><img src={mclaren} alt="mclaren" /><p>McLaren</p></Link></li>                       
           </ul>
         </li>
         <li>
