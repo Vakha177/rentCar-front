@@ -6,6 +6,7 @@ import chatSlice from "../features/chatSlice";
 import commentsSlice from "../features/commentsSlice";
 import brandSlice from "../features/brandSlice";
 import categorySlice from "../features/categorySlice";
+import favouritesSlice from "../features/favouritesSlice";
 
 export const store = configureStore({
     reducer: {
@@ -15,7 +16,8 @@ export const store = configureStore({
         chat: chatSlice,
         comments : commentsSlice ,
         brands: brandSlice,
-        categories: categorySlice
+        categories: categorySlice,
+        favorites:favouritesSlice
     }
 })
 

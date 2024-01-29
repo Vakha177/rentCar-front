@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./Auth.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login, register } from "../../features/applicationSlice";
@@ -8,7 +8,7 @@ const modalNode = document.getElementById("modal-root");
 
 function Auth({ setOpen }) {
   const [auth, setAuth] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSucces] = useState(false);
 
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
@@ -20,39 +20,24 @@ function Auth({ setOpen }) {
   const signIn = useSelector((state) => state.application.signIn);
   const signUp = useSelector((state) => state.application.signUp);
 
-  const modalRef = useRef(null);
 
   const handleAuth = () => {
     auth
       ? dispatch(register({ login: text, password, name, surname }))
       : dispatch(login({ login: text, password }));
-    setSuccess(true);
+    setSucces(true);
     setText("");
     setPassword("");
   };
 
   useEffect(() => {
     signIn && success && setOpen(false);
-    signUp && success && setAuth(false);
+    signUp && success && setAuth(false)
   }, [signUp, signIn, success]);
-
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [setOpen]);
 
   return createPortal(
     <div className="wrapper">
-      <div ref={modalRef} className="form">
+      <div className="form">
         <button onClick={() => setOpen(false)} className="exit">
           X
         </button>
@@ -96,19 +81,20 @@ function Auth({ setOpen }) {
           </>
         )}
 
-        <button onClick={handleAuth} className="submit-btn">
+        <button onClick={handleAuth} className="sumbit-btn">
+          {" "}
           {auth ? "Регистрация" : "Войти"}
         </button>
 
         <div onClick={() => setAuth(!auth)}>
           {auth ? (
             <p className="auth-change-text">
-              Если у вас есть аккаунт, то{" "}
+              Если у вас есть аккаунт то{" "}
               <span className="auth-change">войдите</span>
             </p>
           ) : (
             <p className="auth-change-text">
-              Если у вас нет аккаунта,{" "}
+              Если у вас нет аккаунта{" "}
               <span className="auth-change">зарегистрируйтесь</span>
             </p>
           )}

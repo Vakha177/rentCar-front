@@ -1,70 +1,45 @@
-.nav {
+
+.nav{
   display: flex;
   justify-content: space-between;
+  width: 1050px;
   margin: auto;
   padding: 5px 10px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.221);
   position: sticky;
   top: 0;
-  width: 100%;
 }
-
-.ulForBrand {
-  display: flex;
-  justify-content: center;
-}
-
-.brand_card {
-  width: 50px;
-  height: 70px;
-  margin-bottom: 20px;
-}
-
-.brand_link {
-  display: flex;
-  justify-content: space-between;
-}
-
-.brand_link p {
-  text-align: center;
-}
-
-nav a {
+nav a{
   text-decoration: none;
 }
-
-.logo {
+.logo{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.logo img {
-  width: 70px;
+.logo img{
+width: 70px;
 }
-
-.logo p {
+.logo p{
   margin: 0;
-  margin-top: -10px;
+  margin-top : -10px;
   font-size: 22px;
   font-weight: 600;
   color: white;
 }
-
-.logo p::first-letter {
+.logo p::first-letter{
   color: #e05800;
 }
 
-.nav ul {
+.nav ul{
   display: flex;
   align-items: center;
+  margin-right: -15px;
 }
-
-.nav ul li {
+.nav ul li{
   list-style: none;
 }
-
-.nav ul li a {
+.nav ul li a{
   font-size: 18px;
   font-weight: 500;
   color: white;
@@ -72,73 +47,78 @@ nav a {
   padding: 5px;
   margin: 0 8px;
 }
-
-.nav ul li a:hover {
+.nav ul li a:hover{
   border-bottom: 2px solid #e05800;
 }
-
-.auth {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.auth{
+display: flex;
+justify-content: center;
+align-items: center;
 }
-
-.logIcon {
-  color: #e05800;
+.logIcon{
   transition: 0.3s;
+  cursor: pointer;
 }
-
-.logIcon:hover {
+.exit{
+  color: #e05800;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 10px;
+}
+.heart{
+  color: white;
+  cursor: grab;
+  transition: 0.2s;   
+}
+.heart:hover{
+  transform: scale(1.2);   
+}
+.logIcon:hover{
   transform: scale(1.2);
   color: #e79d58;
 }
-
-.nav ul li ul {
+.exit:hover{
+  transform: scale(1.2);
+}
+.nav ul li ul{
   position: absolute;
   background-color: #152331;
   left: 0;
   top: 60px;
-  width: 100%;
+  width:100%;
   display: none;
   padding-top: 50px;
   transition: 2s;
-}
 
-.nav ul li ul li {
+}
+.nav ul li ul li{
   border-left: 1px solid rgba(159, 159, 159, 0.183);
   border-right: 1px solid rgba(159, 159, 159, 0.183);
   padding: 15px 20px;
-  margin-bottom: 10px;
+  margin-bottom:  10px;    
 }
-
-.nav ul li ul a {
+.nav ul li ul a{
   transition: 0.2s;
 }
-
-.nav ul li ul a:hover {
+.nav ul li ul a:hover{
   border: none;
-  color: #ff6600;
+  color:#ff6600;
   text-shadow: 0px 0px 3px rgb(208, 76, 0);
 }
-
-.nav ul li:hover > ul {
+.nav ul li:hover > ul{
   display: flex;
 }
-
-.nav ul li ul img {
+.nav ul li ul img{
   width: 70px;
 }
-
-.chevroletLogo {
+.chevroletLogo{
   width: 100px;
 }
-
-.nav ul li ul p {
+.nav ul li ul p{
   margin-top: -2px;
   text-align: center;
   margin-bottom: -6px;
 }
-
-.extrasUslugas {
+.extrasUslugas{
   text-align: center;
 }
