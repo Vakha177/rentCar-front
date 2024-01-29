@@ -3,14 +3,23 @@ import {useDispatch, useSelector} from 'react-redux'
 import { fetchCards } from '../features/cardSlice'
 import ProductCard from '../components/products/ProductCard'
 import styles from './allPages.module.css'
+import { useParams } from 'react-router-dom'
 
 function Home() {
-  const cards = useSelector((state) => state.cards.cards)
+  const {id} = useParams()
+  const cars = useSelector((state) => state.cards.cards)
   const dispatch = useDispatch()
   useEffect(()=>{
     dispatch(fetchCards())
   },[dispatch])
-  console.log('sdfsdf', cards);
+
+  const cards = cars.filter((item) => {
+    if (id) {
+      return item.brand === id || item.category.find(el => el === id)
+    }
+    return item
+  })
+  
   return (
     <div className={styles.cards}>
       {cards.map((item)=> {

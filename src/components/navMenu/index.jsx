@@ -21,8 +21,6 @@ function NavMenu() {
     dispatch(fetchCategory())
   }, [dispatch])
 
-  console.log(typeCars);
-
   const [showAuth, setShowAuth] = useState(false) 
 
   return (
@@ -38,7 +36,7 @@ function NavMenu() {
           <NavLink> Автомобили </NavLink>
           <ul className={styles.ulForBrand}>
             {typeCars.map((item, index) => 
-              <Link><li key={index}>{item.name}</li></Link>
+              <Link to={`/${item._id}`}><li key={index}>{item.name}</li></Link>
             )}
           </ul>
         </li>
@@ -46,7 +44,7 @@ function NavMenu() {
           <NavLink> Бренды </NavLink>
           <ul className={styles.ulForBrand}>
             {logo.map((item, index) => 
-              <li><Link className={styles.brand_link}><img className={styles.brand_card} key={index} src={`http://localhost:4100/image/${item.image}`} alt="logo"/><p>{item.name.toLowerCase()}</p></Link></li>
+              <li><Link to={`/${item._id}`} className={styles.brand_link}><img className={styles.brand_card} key={index} src={`http://localhost:4100/image/${item.image}`} alt="logo"/><p>{item.name.toLowerCase()}</p></Link></li>
             )}                     
           </ul>
         </li>

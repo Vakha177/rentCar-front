@@ -14,10 +14,10 @@ const ProductCard = ({id, title, image, price, power, engineCapacity, accelerati
                 
             </div>
             <div>
-                <h2>
+                <h4>
                 {title}
 
-                </h2>
+                </h4>
             </div>
           <br />
 
