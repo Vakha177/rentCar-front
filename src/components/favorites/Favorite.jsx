@@ -27,4 +27,6 @@ function Favorite({title, image, price}) {
   )
 }
 
+
+
 export default Favorite
