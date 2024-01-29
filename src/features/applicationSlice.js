@@ -6,18 +6,25 @@ const initialState = {
   signUp: false,
 };
 
-export const login = createAsyncThunk("tradehub/login", async ({ login, password }, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:4100/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ login, password }),
-    });
-    const token = await res.json();
-    if (token.error) {
-      return thunkAPI.rejectWithValue(token.error);
+
+
+export const login = createAsyncThunk('tradehub/login', async ({login, password  }, thunkAPI) => {
+    try {
+        const res = await fetch('http://localhost:4100/login', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({login, password})
+        })
+        const token = await res.json()
+        if (token.error) {
+            return thunkAPI.rejectWithValue(token.error)
+        }
+        localStorage.setItem('token', token)
+        return thunkAPI.fulfillWithValue(token)
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error)
     }
     localStorage.setItem("token", token);
     return thunkAPI.fulfillWithValue(token);

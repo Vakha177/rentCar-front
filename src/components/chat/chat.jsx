@@ -48,7 +48,8 @@ const Chat = () => {
               </div>
             ))}
           </div>
-          <div className={style.buttonAdd} style={{ marginTop: '10px' }}>
+          <div className={style.wrapperAdd} style={{ marginTop: '10px' }}>
+
             <input className={style.input}
               type="text"
               value={newMessage}
@@ -57,8 +58,9 @@ const Chat = () => {
  />
             <button className={style.btn} onClick={handleSendMessage}>Отправить</button>
           </div>
+
         </div>
-      )}
+)}
           <img src={logoChat} alt="" onClick={handleLogoClick} className={style.logo}/>
     </div>
   );
