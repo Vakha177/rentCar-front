@@ -33,6 +33,7 @@ nav a{
 .nav ul{
     display: flex;
     align-items: center;
+    margin-right: -15px;
 }
 .nav ul li{
     list-style: none;
@@ -54,14 +55,30 @@ justify-content: center;
 align-items: center;
 }
 .logIcon{
-    color: #e05800;
     transition: 0.3s;
+    cursor: pointer;
+}
+.exit{
+    color: #e05800;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-left: 10px;
+}
+.heart{
+    color: white;
+    cursor: grab;
+    transition: 0.2s;   
+}
+.heart:hover{
+    transform: scale(1.2);   
 }
 .logIcon:hover{
     transform: scale(1.2);
     color: #e79d58;
 }
-
+.exit:hover{
+    transform: scale(1.2);
+}
 .nav ul li ul{
     position: absolute;
     background-color: #152331;
