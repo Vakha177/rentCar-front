@@ -31,4 +31,5 @@ function MainFavourites({active, setActive, favourites}) {
   )
 }
 
+
 export default MainFavourites
