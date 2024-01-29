@@ -11,7 +11,7 @@ export const store = configureStore({
     reducer: {
         product: productSlice,
         application: applicationSlice,
-        cards: cardSlice ,
+        cards: cardSlice,
         chat: chatSlice,
         comments : commentsSlice ,
         brands: brandSlice,
