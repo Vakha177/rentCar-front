@@ -1,0 +1,69 @@
+
+
+.foot{
+   margin-top: 0vh;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    border-top: #e05800 solid 2px;
+}
+
+.footLogo img{
+    width: 200%;
+}
+
+
+.footLogo {
+    width: 10%;
+}
+
+.icons{
+    width: 25%;
+    border-left: solid #e05800 2px;
+    display: flex;
+}
+
+.icons img{
+    margin-left: 20px;
+    cursor: pointer;
+    height: 60px;
+    padding: 10px;
+}
+
+.descrip li:hover{
+    color: #e05800;
+}
+
+.descrip h1{
+    border-left:  #e05800 solid 2px;
+}
+
+.descrip li{
+    margin-left: 3px;
+}
+
+.descrip ul{
+    border-left:  #e05800 solid 2px;
+    list-style: none;
+}
+
+.descrip{
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: white;
+    cursor: pointer;
+}
+
+.app{
+    margin-top: 50px;
+    margin-left: 6px;
+}
+
+iframe{
+    margin-left: 30px;
+    position: absolute;
+    bottom: 10px;
+    height: 150px;
+}
+

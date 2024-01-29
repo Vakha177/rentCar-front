@@ -8,6 +8,7 @@ import RentalConditions from './pages/RentalConditions'
 import styles from './App.module.css'
 import Chat from './components/chat/chat'
 import Login from './pages/Login'
+import Footer from './components/footer/Footer'
 function App() {
 
   return (
