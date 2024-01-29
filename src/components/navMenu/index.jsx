@@ -1,61 +1,53 @@
 import Logo from "../../assets/carkey.png";
-import chevrolet from '../../assets/chevrolet.png'
-import audi from '../../assets/audi.png'
-import bmw from '../../assets/bmw.png'
-import porsche from '../../assets/porsche-logo.png'
-import mercedes from '../../assets/mercedes.png'
-import mclaren from '../../assets/mclaren.png'
 import { CgProfile } from "react-icons/cg";
 import styles from "./index.module.css";
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Auth from "../Authorizaz/Auth";
-import { logout } from "../../features/applicationSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { RxExit } from "react-icons/rx";
-import { FaRegHeart } from "react-icons/fa";
-import Favorite from "../favorites/Favorite";
-import MainFavourites from "../favorites/MainFavourites";
+import { fetchBrand } from "../../features/brandSlice";
+import { fetchCategory } from "../../features/categorySlice";
 
 function NavMenu() {
+  
   const dispatch = useDispatch()
-  const logoutFunc = () => {
-    dispatch(logout())
-  }
 
-  const token = useSelector((state) => state.application.token)
-  const [showFav, setShowFav] = useState(false)
+  const logo = useSelector((state) => state.brands.brands)
+  const typeCars = useSelector((state) => state.categories.categories)
+
+
+  useEffect(() => {
+    dispatch(fetchBrand())
+    dispatch(fetchCategory())
+  }, [dispatch])
+
+  console.log(typeCars);
+
   const [showAuth, setShowAuth] = useState(false) 
 
   return (
     <nav className={styles.nav}>
       <Link to="/">
         <div className={styles.logo}>
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="logo" />
           <p>Car rental</p>
         </div>
       </Link>
       <ul>
         <li>
           <NavLink> Автомобили </NavLink>
-          <ul>
-            <li><Link>Седан</Link></li>
-            <li><Link>Универсал</Link></li>
-            <li><Link>Купе</Link></li>
-            <li><Link>Внедорожник</Link></li>
-            <li><Link>Кабриолет</Link></li>
-            <li><Link>Маскл кар</Link></li>
+          <ul className={styles.ulForBrand}>
+            {typeCars.map((item, index) => 
+              <Link><li key={index}>{item.name}</li></Link>
+            )}
           </ul>
         </li>
         <li>
           <NavLink> Бренды </NavLink>
-          <ul>
-            <li><Link><img src={chevrolet} alt="Chevrolet" /><p>Chevrolet</p></Link></li>    
-            <li><Link><img src={bmw} alt="bmw" /><p>BMW</p></Link></li>            
-            <li><Link><img src={audi} alt="audi" /><p>Audi</p></Link></li>            
-            <li><Link><img src={porsche} alt="porsche" /><p>Porsche</p></Link></li>    
-            <li><Link><img src={mercedes} alt="mercedes" /><p>Mercedes</p></Link></li>  
-            <li><Link><img src={mclaren} alt="mclaren" /><p>McLaren</p></Link></li>                       
+          <ul className={styles.ulForBrand}>
+            {logo.map((item, index) => 
+              <li><Link className={styles.brand_link}><img className={styles.brand_card} key={index} src={`http://localhost:4100/image/${item.image}`} alt="logo"/><p>{item.name.toLowerCase()}</p></Link></li>
+            )}                     
           </ul>
         </li>
         <li>
@@ -82,10 +74,8 @@ function NavMenu() {
         </li>
       </ul>
       <div className={styles.auth}>
-        {token ? <div><FaRegHeart onClick={() => setShowFav(!showFav)} className={styles.heart} /> <RxExit className={styles.exit} color="#e05800" onClick={()=>logoutFunc()}/></div>  :
-          <CgProfile onClick={ () => setShowAuth(true)} className={styles.logIcon} size={40} />}
-      </div> 
-      { showFav ? <MainFavourites active={showFav} setActive={setShowFav} setOpen={setShowFav}/> : null}
+          <CgProfile onClick={ () => setShowAuth(true)} className={styles.logIcon} size={40} />
+      </div>
       { showAuth === true ? <Auth setOpen={setShowAuth}/> : null}
     </nav>
   );
