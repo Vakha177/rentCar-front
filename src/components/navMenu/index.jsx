@@ -14,7 +14,6 @@ import { logout } from "../../features/applicationSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RxExit } from "react-icons/rx";
 import { FaRegHeart } from "react-icons/fa";
-import Favorite from "../favorites/Favorite";
 import MainFavourites from "../favorites/MainFavourites";
 
 function NavMenu() {
@@ -29,7 +28,7 @@ function NavMenu() {
 
   return (
     <nav className={styles.nav}>
-      <Link to="/">
+      <Link to="/"> 
         <div className={styles.logo}>
           <img src={Logo} alt="" />
           <p>Car rental</p>
