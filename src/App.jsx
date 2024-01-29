@@ -23,7 +23,6 @@ function App() {
        <Route path='/fullpages/:id' element={<FullCars/>}/>
     </Routes>
  <Chat/>
- <Footer/>
   </div>
      
     

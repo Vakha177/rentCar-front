@@ -30,7 +30,7 @@ export default function CommentsCars() {
                     type="text"
                     placeholder="Ваш отзыв" 
                 />
-                <button onClick={(e) => handleAddComment(e)}>
+                <button className={style.btnAddComm} onClick={(e) => handleAddComment(e)}>
                     Отправить
                 </button>
             </div>
@@ -41,8 +41,8 @@ export default function CommentsCars() {
                 <div>
                     {comments.map((item) => (
                         <div key={item._id} className="comment-container">
-                            <h4 className="cart-id">{item.CartsId}</h4>
-                            <h3 className="comment-text">{item.comment}</h3>
+                            <h4 className={style.userId}>{item.CartsId}</h4>
+                            <h3 className={style.commentText}>{item.comment}</h3>
                             <br />
                             <hr />
                         </div>

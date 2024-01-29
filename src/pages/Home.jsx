@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { fetchCards } from '../features/cardSlice'
 import ProductCard from '../components/products/ProductCard'
 import styles from './allPages.module.css'
+import Footer from '../components/footer/Footer'
 
 function Home() {
   const cards = useSelector((state) => state.cards.cards)
@@ -25,6 +26,7 @@ function Home() {
         engineCapacity={item.engineCapacity}
         />)
       })}
+      <Footer/>
     </div>
   )
 }
