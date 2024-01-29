@@ -1,0 +1,57 @@
+.favorite{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+.fav_contentBox{
+    border-radius: 12px;
+    background-color:  #152331;
+    width: 50%;
+    padding: 20px;
+}
+.fav_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e79d58;
+    border-bottom: 1px solid #e79d58;
+    color: white;
+    padding: 10px 0px;
+}
+.image img{
+    width: 80px;
+}
+.title{
+    font-weight: 600;
+
+}
+.plusMinus{
+    display: flex;
+}
+.plusMinus button{
+    width: 20px;
+    border-radius: 10px;
+    border-color: #e79d58;
+    background-color: transparent;
+    color: #e79d58;
+}
+.delete button{
+    width: 20px;
+    border-radius: 10px;
+    border-color: #e79d58;
+    background-color: transparent;
+    color: #e79d58;
+}
+.btn1{
+    margin-right: 5px;
+}
+.btn2{
+    margin-left: 5px;
+}

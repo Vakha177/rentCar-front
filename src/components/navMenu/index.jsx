@@ -4,6 +4,21 @@ import styles from "./index.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Auth from "../Authorizaz/Auth";
+import { logout } from "../../features/applicationSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RxExit } from "react-icons/rx";
+import { FaRegHeart } from "react-icons/fa";
+import Favorite from "../favorites/Favorite";
+import MainFavourites from "../favorites/MainFavourites";
+
+function NavMenu() {
+  const dispatch = useDispatch()
+  const logoutFunc = () => {
+    dispatch(logout())
+  }
+
+  const token = useSelector((state) => state.application.token)
+  const [showFav, setShowFav] = useState(false)
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBrand } from "../../features/brandSlice";
 import { fetchCategory } from "../../features/categorySlice";
@@ -74,8 +89,10 @@ function NavMenu() {
         </li>
       </ul>
       <div className={styles.auth}>
-          <CgProfile onClick={ () => setShowAuth(true)} className={styles.logIcon} size={40} />
-      </div>
+        {token ? <div><FaRegHeart onClick={() => setShowFav(!showFav)} className={styles.heart} /> <RxExit className={styles.exit} color="#e05800" onClick={()=>logoutFunc()}/></div>  :
+          <CgProfile onClick={ () => setShowAuth(true)} className={styles.logIcon} size={40} />}
+      </div> 
+      { showFav ? <MainFavourites active={showFav} setActive={setShowFav} setOpen={setShowFav}/> : null}
       { showAuth === true ? <Auth setOpen={setShowAuth}/> : null}
     </nav>
   );
