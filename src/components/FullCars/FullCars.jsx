@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import style from "../FullCars/fullCars.module.css";
-import ferrari from "../../image/sf90.jpg";
-import ferrariPanel from "../../image/sf902.jpg";
 import Condition from "../condition/Condition";
 import RentAuto from "../rentAuto/rentAuto";
 import RentAutoInfo from "../rentAutoInfo/RentAutoInfo";
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../../features/ProductSlice";
-export default function FullCars() {
+import { useDispatch, useSelector } from "react-redux";
+import CommentsCars from "../CommentsCars/CommentsCars";
 
+export default function FullCars() {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-
   const [open, setOpen] = useState(false);
   const [openRent, setOpenRent] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0); // Индекс текущего слайда
 
   function handleSetOpen() {
     setOpen(!open);
   }
+  
   function handleOpenRent() {
     setOpenRent(!openRent);
   }
@@ -65,9 +65,14 @@ export default function FullCars() {
           </div>
         </div>
 
-        <img src={`http://localhost:4100/image/${product.image[0]}`} alt="" className={style.fotoSf} />
+        <div className={style.slider}>
+          <img src={`http://localhost:4100/image/${product.image?.[currentIndex]}`} alt="" className={style.fotoSf} />
+          <button className={style.next} onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + product.image.length) % product.image.length)}>&lt;</button>
+          <button className={style.prev} onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % product.image.length)}>&gt;</button>
+        </div>
       </div>
       <RentAutoInfo />
+      <CommentsCars/>
     </>
   );
 }

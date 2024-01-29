@@ -29,6 +29,7 @@ const ProductCard = ({id, title, image, price, power, engineCapacity, accelerati
           <br />
 <hr />
             <div className={styles.price}>
+
                 <h2>{price}$</h2>
             </div>
             <br />
