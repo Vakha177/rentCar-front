@@ -23,8 +23,7 @@ function Favorite({title, image, price}) {
             <button>X</button>
           </div>
         </div>
-    //   </div>
-    // </div>
+
   )
 }
 
